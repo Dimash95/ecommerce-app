@@ -1,0 +1,44 @@
+@import '../../assets/styles/variables';
+
+.breadcrumbs {
+  width: 100%;
+
+  position: absolute;
+  top: 120px;
+  left: 0;
+
+  @media (max-width: $resM) {
+    top: 90px;
+  }
+}
+
+.breadcrumbsList {
+  &,
+  .breadcrumbsItem {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
+.breadcrumbsItem {
+  color: $colorPrimary1;
+
+  &:last-of-type {
+    color: $colorPrimary2;
+    pointer-events: none;
+  }
+}
+
+.breadcrumbsLink {
+  color: inherit;
+}
+
+.breadcrumbsSeparator {
+  width: 10px;
+  height: 10px;
+
+  color: $colorBlack;
+
+  opacity: 0.5;
+}

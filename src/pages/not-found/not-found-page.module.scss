@@ -1,0 +1,63 @@
+@import '../../assets/styles/variables';
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 70px;
+}
+
+.video {
+  max-width: 800px;
+
+  @media (max-width: $resS) {
+    max-width: 300px;
+  }
+}
+
+.textContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding-left: 80px;
+
+  @media (max-width: $resS) {
+    flex-direction: column;
+    padding-left: 0;
+    max-width: 400px;
+  }
+}
+
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.h1 {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+.imgDisney {
+  max-width: 130px;
+}
+
+.notFoundButton {
+  margin: 0 auto;
+  margin-top: 10px;
+  max-width: 50px;
+  font-size: 10px;
+}

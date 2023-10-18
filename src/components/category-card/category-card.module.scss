@@ -1,0 +1,190 @@
+@import '../../assets/styles/variables';
+
+.categoryContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.categoryCard {
+  padding: 10px;
+  font-size: 20px;
+  overflow-x: hidden;
+}
+
+.categoryPreview {
+  display: flex;
+  flex-direction: column;
+}
+
+.categoryPreviewTitle {
+  display: flex;
+
+  padding-bottom: 16px;
+  border-bottom: 1px solid $colorGray1;
+  box-sizing: border-box;
+
+  margin-bottom: 32px;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: $colorPrimary2;
+
+    margin-right: auto;
+
+    &:hover {
+      svg {
+        animation: arrowPoint 1s;
+      }
+    }
+  }
+
+  span {
+  }
+
+  svg {
+    width: 28px;
+    height: 28px;
+
+    transform: scaleX(-1);
+
+    color: $colorPrimary1;
+  }
+
+  @keyframes arrowPoint {
+    0% {
+      transform: scaleX(-1);
+    }
+    50% {
+      transform: translateX(12px) scaleX(-1);
+    }
+    100% {
+      transform: scaleX(-1);
+    }
+  }
+}
+
+.books {
+  position: relative;
+}
+
+.booksList {
+  display: flex;
+  margin: -30px -15px;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  pointer-events: none;
+
+  padding: 30px 0;
+
+  @media (max-width: $resL) {
+    pointer-events: auto;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  & > * {
+    pointer-events: auto;
+  }
+}
+
+.booksItem {
+  display: flex;
+
+  flex: 0 0 calc(100% / 5 - 15px * 2);
+
+  margin: 0 15px;
+
+  @media (max-width: $resL) {
+    flex: 0 0 calc(100% / 4 - 15px * 2);
+  }
+
+  @media (max-width: 840px) {
+    flex: 0 0 calc(100% / 3 - 15px * 2);
+  }
+
+  @media (max-width: 640px) {
+    flex: 0 0 calc(100% / 2 - 15px * 2);
+  }
+
+  @media (max-width: 440px) {
+    flex: 0 0 calc(100% - 15px * 2);
+  }
+}
+
+.booksNav {
+  display: flex;
+  gap: 16px;
+
+  position: absolute;
+  top: -84px;
+  right: 0;
+
+  pointer-events: none;
+
+  @media (max-width: $resS) {
+    top: -82px;
+    gap: 8px;
+  }
+}
+
+.booksNavButtonLeft,
+.booksNavButtonRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  pointer-events: auto;
+
+  border: none;
+  background: transparent;
+
+  padding: 4px;
+  border: 1px solid $colorPrimary1;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  @media (max-width: $resS) {
+    padding: 2px;
+  }
+
+  svg {
+    display: block;
+
+    width: 26px;
+    height: 26px;
+
+    color: $colorPrimary1;
+  }
+
+  &.disabled {
+    border-color: $colorGray1;
+
+    pointer-events: none;
+
+    svg {
+      color: $colorGray1;
+    }
+  }
+}
+
+.booksNavButtonRight {
+}
+
+.booksNavButtonLeft {
+  svg {
+    transform: scaleX(-1);
+  }
+}

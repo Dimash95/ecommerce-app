@@ -1,0 +1,94 @@
+@import '../../assets/styles/variables';
+
+$breakpoint-pixels: 510px;
+
+.registrationContainer {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(to bottom, #c8e4b2, #7eaa92);
+
+  @media (max-width: $breakpoint-pixels) {
+    padding: 80px 0;
+  }
+}
+
+.registrationMain {
+  box-sizing: border-box;
+
+  max-width: 505px;
+  width: 100%;
+
+  margin: 75px auto 0;
+  padding: 30px;
+
+  background-color: #fff;
+
+  border-radius: 10px;
+
+  @media (max-width: $breakpoint-pixels) {
+    margin-top: 0;
+  }
+}
+
+.loginRegistrationSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 128%;
+
+  @media (max-width: $breakpoint-pixels) {
+    margin: 0 auto;
+  }
+}
+
+.loginText {
+  color: $colorBlack;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.loginTextLink {
+  color: $colorPrimary1;
+}
+
+.firstloginText {
+  @media (max-width: $breakpoint-pixels) {
+    display: none;
+  }
+}
+.secondloginText {
+  display: none;
+
+  text-align: center;
+
+  @media (max-width: $breakpoint-pixels) {
+    display: block;
+  }
+}
+
+.registrationForm {
+  display: flex;
+  flex-direction: column;
+
+  legend {
+    margin-bottom: 5px;
+  }
+
+  @media (max-width: $breakpoint-pixels) {
+    margin-bottom: 45px;
+  }
+}

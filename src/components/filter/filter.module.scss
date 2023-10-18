@@ -1,0 +1,120 @@
+@import '../../assets/styles/variables';
+
+.hide {
+  display: none;
+}
+
+.filterButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.filterButton {
+  padding: 4px 12px;
+
+  svg {
+    position: relative;
+    top: 1px;
+
+    transform: rotate(90deg);
+  }
+}
+
+.filterButtonOpened {
+  svg {
+    top: auto;
+    transform: rotate(-90deg);
+  }
+}
+
+.filterModal {
+  width: 220px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 16px;
+  border: 1px solid $colorPrimary1;
+  border-radius: 4px;
+
+  background: $colorWhite;
+
+  position: absolute;
+  z-index: 2;
+
+  margin-top: 8px;
+  margin-left: 8px;
+
+  opacity: 0;
+
+  transition: 0.1s;
+}
+
+.filterModalOpened {
+  opacity: 1;
+}
+
+.filterModalRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.filterModalText {
+}
+
+.filterModalInputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  span {
+    width: 8px;
+    height: 1px;
+
+    background: $colorGray2;
+  }
+}
+
+.filterModalInput {
+  width: 48px;
+
+  padding: 4px;
+  border: 1px solid $colorGray1;
+  border-radius: 4px;
+
+  &:focus {
+    border-color: $colorPrimary1;
+    outline: none;
+  }
+}
+
+.filterButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.filterButtonReset,
+.filterButtonSubmit {
+  flex: 1 1 50%;
+
+  padding: 4px 12px;
+}
+
+.filterButtonReset {
+  background: transparent;
+
+  color: $colorPrimary1;
+  border: 1px solid $colorPrimary1;
+}
+
+.filterButtonSubmit {
+}

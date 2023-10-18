@@ -1,0 +1,138 @@
+@import '../../assets/styles/variables';
+
+.detailContainer {
+  display: flex;
+  gap: 32px;
+
+  @media (max-width: $resM) {
+    flex-direction: column-reverse;
+  }
+}
+
+.detailColLeft {
+  flex: 0 0 540px;
+
+  @media (max-width: $resXL) {
+    flex: 0 0 400px;
+  }
+
+  @media (max-width: $resL) {
+    flex: 0 0 320px;
+  }
+
+  @media (max-width: $resM) {
+    flex: 0 0 100%;
+  }
+}
+
+.detailColRight,
+.detailWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.detailColRight {
+  flex: 1 1 auto;
+}
+
+.detailTitle {
+  color: $colorPrimary2;
+}
+
+.detailDataRow {
+  display: flex;
+  gap: 24px;
+}
+
+.detailPrice {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 130%;
+  color: $colorPrimary1;
+}
+
+.detailPriceOld {
+  font-size: 18px;
+  line-height: 130%;
+  color: $colorBlack;
+  opacity: 0.5;
+
+  position: relative;
+
+  margin-bottom: auto;
+
+  &:before {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    width: 100%;
+    height: 2px;
+
+    background: $colorError;
+  }
+}
+
+.detailInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  border: 1px solid $colorGray1;
+  padding: 16px;
+  box-sizing: border-box;
+  border-radius: 6px;
+
+  @media (max-width: $resS) {
+    font-size: 14px;
+  }
+}
+
+.detailInfoRow {
+  display: flex;
+  gap: 16px;
+
+  span {
+    &:first-child {
+      display: block;
+      flex: 0 0 50%;
+      font-weight: bold;
+    }
+  }
+}
+
+.detailSubtitle {
+  color: $colorPrimary2;
+}
+
+.detailDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detailText {
+  color: $colorPrimary2;
+  opacity: 0.8;
+
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.detailButton {
+  min-width: 250px;
+
+  @media (max-width: $resM) {
+    min-width: 220px;
+  }
+}

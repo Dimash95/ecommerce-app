@@ -1,0 +1,29 @@
+:root {
+  --color-primary-1: #56b280;
+  --color-primary-2: #0b254b;
+  --color-black: #222;
+  --color-white: #fff;
+  --color-gray-1: #e6e6e6;
+  --color-gray-2: #726b66;
+  --color-error: #ff3e3e;
+}
+
+$colorPrimary1: var(--color-primary-1);
+$colorPrimary2: var(--color-primary-2);
+$colorBlack: var(--color-black);
+$colorWhite: var(--color-white);
+$colorGray1: var(--color-gray-1);
+$colorGray2: var(--color-gray-2);
+$colorError: var(--color-error);
+
+$resBase: 1920px;
+$resXL: 1440px;
+$resL: 992px;
+$resM: 768px;
+$resS: 540px;
+$resXS: 360px;
+
+@function pxToVw($screen, $input, $modifier: 1) {
+  $result: (($input / 1px) / (($screen / 1px) * 0.01)) * 1vw;
+  @return calc(#{$result} * #{$modifier} + #{$input} * (1 - #{$modifier}));
+}

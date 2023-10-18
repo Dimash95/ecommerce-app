@@ -1,0 +1,155 @@
+@import '../../assets/styles/variables';
+
+.bookCard {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  position: relative;
+
+  &::before {
+    content: '';
+
+    width: 100%;
+    height: 100%;
+
+    padding: 8px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    box-shadow: 0 0 10px $colorBlack;
+    border: 1px solid $colorPrimary1;
+    border-radius: 8px;
+
+    transition: 0.5s;
+
+    opacity: 0;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 0.5;
+    }
+  }
+}
+
+.bookCardLinkOverlay {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.bookDiscount {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 0 4px;
+
+  background: $colorError;
+  color: $colorWhite;
+
+  &::before {
+    content: '';
+
+    width: 20px;
+    height: 0px;
+
+    border: 20px solid $colorError;
+    border-left: 20px solid transparent;
+    box-sizing: border-box;
+
+    position: absolute;
+    top: 0;
+    left: -20px;
+    z-index: -1;
+  }
+}
+
+.bookPreview {
+  height: 300px;
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.bookDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bookTitle {
+  color: $colorPrimary2;
+}
+
+.bookAuthor {
+  color: $colorGray2;
+}
+
+.bookPriceWrapper {
+  display: flex;
+  gap: 16px;
+
+  margin-top: auto;
+}
+
+.bookPriceOld {
+  position: relative;
+
+  font-weight: 500;
+  color: $colorGray2;
+
+  margin-bottom: auto;
+
+  &::before {
+    content: '';
+
+    width: 100%;
+    height: 1px;
+
+    background: $colorError;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+  }
+}
+
+.bookPriceNew {
+  color: $colorPrimary1;
+}
+
+.bookButton {
+  position: relative;
+  z-index: 2;
+
+  &:disabled {
+    background: transparent;
+    border-color: $colorGray1;
+    color: $colorPrimary1;
+  }
+}

@@ -1,0 +1,130 @@
+@import '../../../assets/styles/variables';
+
+$breakpoint-pixels: 510px;
+
+.registrationFormBlock {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+
+  input {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  @media (max-width: $breakpoint-pixels) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.registrationFormBlock.dateBlock {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.registrationButton {
+  max-width: 50%;
+  width: 100%;
+
+  margin: 30px 0 0 auto;
+
+  @media (max-width: $breakpoint-pixels) {
+    margin-right: auto;
+  }
+}
+
+.error {
+  min-height: 18px;
+
+  margin: 2px 0 5px;
+
+  color: red;
+  font-size: 10px !important;
+  line-height: 0.9em;
+}
+
+.inputError {
+  border-color: red !important;
+  &:focus,
+  &:focus-visible {
+    border-color: red !important;
+  }
+}
+
+.registrationSelect {
+  height: 40px;
+  width: 100%;
+  padding: 0 17px;
+}
+
+.registrationAddressBlock {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.registrationShippingAndBillingBlock {
+  display: flex;
+  gap: 12px;
+
+  @media (max-width: $breakpoint-pixels) {
+    flex-direction: column;
+  }
+}
+
+.registrationAddressUnit {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &:only-child {
+    width: 100%;
+  }
+
+  div {
+    width: 100%;
+  }
+
+  p {
+    margin-bottom: 5px;
+
+    font-size: 14px;
+  }
+}
+
+.registrationCheckboxBlock {
+  display: flex;
+  align-items: center;
+  input {
+    width: max-content;
+    margin: 0 7px 0 0;
+  }
+  label {
+    font-size: 12px;
+  }
+}
+
+.passwordBlock {
+  position: relative;
+}
+
+.passwordButton {
+  cursor: pointer;
+
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 20px;
+  height: 20px;
+
+  background-image: url(../../../assets/icons/eye-close.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: transparent;
+  border: none;
+}
+
+.active {
+  background-image: url(../../../assets/icons/eye-open.svg);
+}

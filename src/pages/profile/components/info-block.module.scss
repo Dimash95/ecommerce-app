@@ -1,0 +1,143 @@
+@import '../../../assets/styles/variables';
+
+$minSize: 620px;
+
+.titleBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  color: $colorBlack;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+button.editButton {
+  width: 100px;
+  height: 40px;
+
+  font-size: 14px;
+}
+
+button.cancelButton {
+  border: 1px solid $colorPrimary1;
+
+  background-color: transparent;
+  color: $colorPrimary1;
+}
+
+button.deleteButton {
+  background-color: rgb(219, 18, 18);
+}
+
+button.addButton {
+  min-width: max-content;
+
+  margin-top: 10px;
+}
+
+.hr {
+  height: 1px;
+  width: 100%;
+
+  margin: 15px 0;
+
+  border: none;
+
+  background-color: #aaaaaa;
+}
+
+.mainBlock {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.doubleInputBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 30px;
+
+  @media (max-width: $minSize) {
+    flex-direction: column;
+  }
+}
+
+.inputBlock {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 5px;
+
+  font-weight: 500;
+}
+
+.switchBlock {
+  box-sizing: border-box;
+  width: 100%;
+
+  padding-right: 5px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  column-gap: 10px;
+}
+
+.mainAddressBlock {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+
+  @media (max-width: $minSize) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.addressBlock {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  h3 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #bdbdbd;
+    font-weight: 700;
+  }
+}
+
+.nonEdit {
+  input {
+    border: none;
+    border-bottom: 1px solid #cecece;
+  }
+  input:disabled {
+    background-color: transparent;
+  }
+}
+
+.error {
+  border-color: red !important;
+
+  color: red;
+  font-size: 11px;
+  line-height: 90%;
+}
+
+.select {
+  width: 100%;
+
+  margin-bottom: 10px;
+
+  border-radius: 0 !important;
+}

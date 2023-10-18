@@ -1,0 +1,20 @@
+@import '../../assets/styles/variables';
+
+.title {
+  font-size: 25px;
+}
+
+.userBlock {
+  max-width: 645px;
+  width: 100%;
+
+  margin: 50px auto;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 70px;
+}
+
+.antdText {
+  padding: 90px 0;
+}

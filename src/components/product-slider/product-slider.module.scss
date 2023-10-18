@@ -1,0 +1,176 @@
+@import '../../assets/styles/variables';
+
+.slider {
+  position: relative;
+}
+
+.sliderModal {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  .sliderCurrentWrapper {
+    flex: 1 1 auto;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .slideCurrentSlide {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+}
+
+.slideCurrentSlide {
+  width: 100%;
+  height: 540px;
+
+  object-fit: contain;
+
+  position: relative;
+  left: 0;
+
+  transition: transform 0.3s ease;
+
+  cursor: pointer;
+
+  @media (max-width: $resXL) {
+    height: 400px;
+  }
+
+  @media (max-width: $resL) {
+    height: 320px;
+  }
+}
+
+.thumbnails {
+  display: flex;
+  margin-top: 10px;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 8px;
+
+  button {
+    flex: 0 0 20%;
+    height: 100px;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+    @media (max-width: $resXL) {
+      height: 80px;
+    }
+
+    @media (max-width: $resL) {
+      height: 60px;
+    }
+
+    @media (max-width: $resM) {
+      height: 18vw;
+    }
+
+    &.active {
+      pointer-events: none;
+
+      img {
+        opacity: 1;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    opacity: 0.5;
+    transition: 0.1s;
+  }
+}
+
+.sliderCurrentWrapper {
+  position: relative;
+}
+
+.sliderNav {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+
+  padding: 0 16px;
+  box-sizing: border-box;
+
+  pointer-events: none;
+
+  & > * {
+    pointer-events: auto;
+  }
+}
+
+.sliderNavLeft,
+.sliderNavRight {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: $colorPrimary1;
+
+  border: 1px solid $colorWhite;
+  border-radius: 50%;
+
+  overflow: hidden;
+  cursor: pointer;
+
+  position: relative;
+  z-index: 0;
+
+  transition: 0.1s;
+
+  &:hover {
+    background: $colorWhite;
+    border-color: $colorPrimary1;
+
+    svg {
+      color: $colorPrimary1;
+    }
+  }
+
+  svg {
+    display: flex;
+
+    width: 24px;
+    height: 24px;
+
+    padding-left: 2px;
+
+    color: $colorWhite;
+  }
+}
+
+.sliderNavLeft {
+  svg {
+    transform: scaleX(-1);
+    transform-origin: top center;
+  }
+}
+
+.sliderNavRight {
+}

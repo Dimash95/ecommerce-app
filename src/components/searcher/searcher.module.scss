@@ -1,0 +1,38 @@
+@import '../../assets/styles/variables';
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  @media (max-width: 440px) {
+    width: 100%;
+  }
+}
+
+.searchInput {
+  width: 200px;
+
+  padding: 4px 8px;
+  border: 1px solid $colorGray1;
+  border-radius: 4px;
+
+  @media (max-width: 440px) {
+    width: 100%;
+  }
+
+  &::placeholder {
+    color: $colorGray2;
+  }
+
+  &:focus {
+    border-color: $colorPrimary1;
+    outline: none;
+  }
+}
+
+.searchIcon {
+  width: 26px;
+  height: 26px;
+}

@@ -1,0 +1,142 @@
+@import '../../assets/styles/variables';
+
+$breakpoint-pixels: 470px;
+
+.authContainer {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(to bottom, #c8e4b2, #7eaa92);
+}
+
+.authMain {
+  box-sizing: border-box;
+
+  max-width: 445px;
+  width: 100%;
+
+  margin: 0 auto;
+  padding: 30px;
+
+  background-color: #fff;
+
+  border-radius: 10px;
+}
+
+.loginRegistrationSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 128%;
+
+  @media (max-width: $breakpoint-pixels) {
+    margin: 0 auto;
+  }
+}
+
+.registrationText {
+  color: $colorBlack;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.registrationTextLink {
+  color: $colorPrimary1;
+}
+
+.firstRegistrationText {
+  @media (max-width: $breakpoint-pixels) {
+    display: none;
+  }
+}
+.secondRegistrationText {
+  display: none;
+
+  text-align: center;
+
+  @media (max-width: $breakpoint-pixels) {
+    display: block;
+  }
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  @media (max-width: $breakpoint-pixels) {
+    margin-bottom: 45px;
+  }
+}
+
+.loginButton {
+  max-width: 50%;
+  width: 100%;
+
+  margin: 8px 0 0 auto;
+
+  @media (max-width: $breakpoint-pixels) {
+    margin-right: auto;
+  }
+}
+
+.error {
+  min-height: 18px;
+
+  margin: 2px 0 5px;
+
+  color: red;
+  font-size: 10px;
+  line-height: 0.9em;
+}
+
+.inputError {
+  border-color: red !important;
+  &:focus,
+  &:focus-visible {
+    border-color: red !important;
+  }
+}
+
+.passwordBlock {
+  position: relative;
+}
+
+.passwordButton {
+  cursor: pointer;
+
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 20px;
+  height: 20px;
+
+  background-image: url(../../assets/icons/eye-close.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: transparent;
+  border: none;
+}
+
+.active {
+  background-image: url(../../assets/icons/eye-open.svg);
+}
